@@ -1,7 +1,11 @@
-#+TITLE: 排序算法
+#+TITLE: Sort
 #+ORGA_PUBLISH_KEYWORD: DONE
 
-* DONE 排序算法 :Algorighm:Sort:
-CLOSED: [2021-09-30 Thu 21:09]
-- State "DONE"       from "DONE"       [2021-09-30 Thu 21:09]
-balabala
+* DONE 快速排序 :Algorighm:Sort:
+CLOSED: [2021-09-30 Thu 22:01]
+- State "DONE"       from "TODO"       [2021-09-30 Thu 22:01]
+** python
+#+begin_src python
+def quick_sort(l):
+    pass
+#+end_src
