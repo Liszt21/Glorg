@@ -21,7 +21,7 @@ export default ({ children }) => {
           display: "flex",
         }}
       >
-        <h1>Blorg</h1>
+        <h1>Glorg</h1>
         <Menu mode="horizontal" selectedKeys={[current]}>
           <Menu.Item key="">
             <Link to="/">首页</Link>
@@ -52,7 +52,7 @@ export default ({ children }) => {
       </Layout>
       <Footer style={{ textAlign: "center" }}>
         All materials &copy; {`${new Date().getFullYear()}`}, Liszt21.
-        <BackTop></BackTop>
+        <BackTop />
       </Footer>
     </Layout>
   )

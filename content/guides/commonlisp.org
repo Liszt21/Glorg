@@ -1,0 +1,69 @@
+#+TITLE: Common Lisp
+#+ORGA_PUBLISH_KEYWORD: DONE
+
+* DONE CommonLisp 语法 :Lisp:Syntax:
+CLOSED: [2021-09-30 Thu 21:04]
+- State "DONE"       from              [2021-09-30 Thu 21:04]
+** Axiom
+*** quote
+#+BEGIN_SRC lisp
+(quote a)
+'a
+(quote (a b c))
+'(a b c)
+#+END_SRC
+
+*** atom
+#+BEGIN_SRC lisp
+(atom 'a) ;; => t
+(atom '(a b c)) ;; => nil
+(atom '()) ;; => t
+(atom '(atom 'a)) ;; => nil
+#+END_SRC
+
+#+RESULTS:
+: NIL
+
+*** eq
+#+BEGIN_SRC lisp
+(eq 'a 'a) ;; => t
+(eq 'a 'b) ;; => nil
+(eq '() '()) ;; => t
+#+END_SRC
+
+#+RESULTS:
+: T
+
+*** car
+#+BEGIN_SRC lisp
+(car '(a b c)) ;; => a
+#+END_SRC
+
+#+RESULTS:
+: A
+
+*** cdr
+#+BEGIN_SRC lisp
+(cdr '(a b c)) ;; => (b c)
+#+END_SRC
+
+#+RESULTS:
+| B | C |
+
+*** cons
+#+BEGIN_SRC lisp
+(cons 'a '(b c)) ;; => (a b c)
+(cons 'a (cons 'b (cons 'c '()))) ;; => (a b c)
+#+END_SRC
+
+#+RESULTS:
+| A | B | C |
+
+*** cond
+#+BEGIN_SRC lisp
+(cond ((eq 'a 'b) 'first)
+        ((atom 'a)  'second)) ;; => second
+#+END_SRC
+
+#+RESULTS:
+: SECOND

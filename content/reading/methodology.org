@@ -1,0 +1,19 @@
+#+TITLE: 方法论
+#+DATE: 2020-07-19
+#+ORGA_PUBLISH_KEYWORD: DONE
+
+* DONE 逻辑等式与心象术 :Methodology:
+CLOSED: [2021-09-30 Thu 21:08]
+- State "DONE"       from "TODO"       [2021-09-30 Thu 21:08]
+** 概念
+记忆公式
+题目=答案
+*** 理论
+- 思维习惯
+- 铁三角
+- 交集法
+
+
+** 例子
+*** 挪用公款罪
+*** 产品差别化
