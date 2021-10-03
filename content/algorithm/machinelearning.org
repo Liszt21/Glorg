@@ -3,6 +3,9 @@
 
 * DONE 线性回归 :Algorithm:ML:
 CLOSED: [2021-09-30 Thu 22:04]
+:PROPERTIES:
+:SUMMARY: linear regression
+:END:
 - State "DONE"       from              [2021-09-30 Thu 22:04]
 ** sklearn
 #+begin_src python

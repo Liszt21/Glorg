@@ -3,6 +3,10 @@
 
 * DONE CommonLisp 语法 :Lisp:Syntax:
 CLOSED: [2021-09-30 Thu 21:04]
+:PROPERTIES:
+:SUMMARY: CommonLisp 语法介绍：七大公理，变量，函数，宏
+:END:
+
 - State "DONE"       from              [2021-09-30 Thu 21:04]
 ** Axiom
 *** quote

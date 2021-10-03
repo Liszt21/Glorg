@@ -2,7 +2,11 @@
 #+ORGA_PUBLISH_KEYWORD: DONE
 
 * DONE 快速排序 :Algorighm:Sort:
-CLOSED: [2021-09-30 Thu 22:01]
+CLOSED: [2021-10-03 Sun 00:28]
+:PROPERTIES:
+:SUMMARY: 快速排序
+:END:
+
 - State "DONE"       from "TODO"       [2021-09-30 Thu 22:01]
 ** python
 #+begin_src python

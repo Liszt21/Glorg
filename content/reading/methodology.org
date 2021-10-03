@@ -4,6 +4,10 @@
 
 * DONE 逻辑等式与心象术 :Methodology:
 CLOSED: [2021-09-30 Thu 21:08]
+:PROPERTIES:
+:SUMMARY: 逻辑等式与心象术
+:END:
+
 - State "DONE"       from "TODO"       [2021-09-30 Thu 21:08]
 ** 概念
 记忆公式

@@ -3,6 +3,10 @@
 
 * DONE Tmux常用功能 :Tmux:
 CLOSED: [2021-09-30 Thu 21:08]
+:PROPERTIES:
+:SUMMARY: Tmux 工具功能介绍，快捷键，快捷命令介绍
+:END:
+
 - State "DONE"       from "TODO"       [2021-09-30 Thu 21:08]
 ** 会话管理
 #+begin_src shell

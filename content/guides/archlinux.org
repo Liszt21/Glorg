@@ -3,6 +3,10 @@
 
 * DONE 安装ArchLinux :tutorial:linux:
 CLOSED: [2021-09-30 Thu 21:10]
+:PROPERTIES:
+:SUMMARY: Arch Linux 系统安装指南（启动盘，分区，配置，引导，源，常用设置）
+:END:
+
 - State "DONE"       from "TODO"       [2021-09-30 Thu 21:10]
 ** 启动盘
 *** Ventoy
