@@ -26,14 +26,14 @@ export default ({ children }) => {
           <Menu.Item key="">
             <Link to="/">首页</Link>
           </Menu.Item>
-          <Menu.Item key="archives">
-            <Link to="/archives">归档</Link>
-          </Menu.Item>
           <Menu.Item key="categories">
             <Link to="/categories">分类</Link>
           </Menu.Item>
           <Menu.Item key="tags">
             <Link to="/tags">标签</Link>
+          </Menu.Item>
+          <Menu.Item key="archives">
+            <Link to="/archives">归档</Link>
           </Menu.Item>
           <Menu.Item key="about">
             <Link to="/about">关于</Link>
