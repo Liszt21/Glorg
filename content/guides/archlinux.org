@@ -1,7 +1,7 @@
 #+TITLE: ArchLinux
 #+ORGA_PUBLISH_KEYWORD: DONE
 
-* DONE 安装ArchLinux :tutorial:linux:
+* DONE 安装ArchLinux :Tutorial:Linux:
 CLOSED: [2021-09-30 Thu 21:10]
 :PROPERTIES:
 :SUMMARY: Arch Linux 系统安装指南（启动盘，分区，配置，引导，源，常用设置）

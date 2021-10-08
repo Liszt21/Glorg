@@ -1,6 +1,5 @@
 import * as React from "react"
-import { List, Avatar, Space, Tag } from 'antd';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { List, Tag } from 'antd';
 
 interface PostData {
   title: string;
