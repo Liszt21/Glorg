@@ -1,0 +1,96 @@
+#+TITLE: Linux指南
+#+ORGA_PUBLISH_KEYWORD: DONE
+
+* grep
+grep [-abcEFGhHilLnqrsvVwxy] [-A<显示行数>] [-B<显示列数>] [-C<显示列数>] [-d<进行动作>] [-e<范本样式>] [-f<范本文件>] [--help] [范本样式] [文件或目录...]
+** Options
+| options                                           | action                                                   |
+|---------------------------------------------------+----------------------------------------------------------|
+| -a或 --text                                       | 不要忽略二进制的数据。                                   |
+| -A<显示行数> 或 --after-context=<显示行数>        | 除了显示符合范本样式的那一列之外，并显示该行之后的内容。 |
+| -b 或 --byte-offset                               | 在显示符合样式的那一行之前，标示出该行第一个字符的编号。 |
+| -B<显示行数> 或 --before-context=<显示行数>       | 除了显示符合样式的那一行之外，并显示该行之前的内容。     |
+| -c 或 --count                                     | 计算符合样式的列数。                                     |
+| -C<显示行数> 或 --context=<显示行数>或-<显示行数> | 除了显示符合样式的那一行之外，并显示该行之前后的内容。   |
+| -d <动作> 或 --directories=<动作>                 | 当指定要查找的是目录而非文件时，必须使用这项参数         |
+| -e<范本样式> 或 --regexp=<范本样式>               | 指定字符串做为查找文件内容的样式。                       |
+| -E 或 --extended-regexp                           | 将样式为延伸的正则表达式来使用。                         |
+| -f<规则文件> 或 --file=<规则文件>                 | 指定规则文件，其内容含有一个或多个规则样式               |
+| -F 或 --fixed-regexp                              | 将样式视为固定字符串的列表。                             |
+| -G 或 --basic-regexp                              | 将样式视为普通的表示法来使用。                           |
+| -h 或 --no-filename                               | 在显示符合样式的那一行之前，不标示该行所属的文件名称。   |
+| -H 或 --with-filename                             | 在显示符合样式的那一行之前，表示该行所属的文件名称。     |
+| -i 或 --ignore-case                               | 忽略字符大小写的差别。                                   |
+| -l 或 --file-with-matches                         | 列出文件内容符合指定的样式的文件名称。                   |
+| -L 或 --files-without-match                       | 列出文件内容不符合指定的样式的文件名称。                 |
+| -n 或 --line-number                               | 在显示符合样式的那一行之前，标示出该行的列数编号。       |
+| -o 或 --only-matching                             | 只显示匹配PATTERN 部分。                                 |
+| -q 或 --quiet或--silent                           | 不显示任何信息。                                         |
+| -r 或 --recursive                                 | 此参数的效果和指定"-d recurse"参数相同。                 |
+| -s 或 --no-messages                               | 不显示错误信息。                                         |
+| -v 或 --invert-match                              | 显示不包含匹配文本的所有行。                             |
+| -V 或 --version                                   | 显示版本信息。                                           |
+| -w 或 --word-regexp                               | 只显示全字符合的列。                                     |
+| -x --line-regexp                                  | 只显示全列符合的列。                                     |
+| -y                                                | 此参数的效果和指定"-i"参数相同。                         |
+
+* awk
+AWK 是一种处理文本文件的语言，是一个强大的文本分析工具。
+awk [选项参数] 'script' var=value file(s)
+awk [选项参数] -f scriptfile var=value file(s)
+** Options
+| options                                                 | action                                        |
+|---------------------------------------------------------+-----------------------------------------------|
+| -F fs or --field-separator fs                           | 指定输入文件折分隔符如-F:                     |
+| -v var=value or --asign var=value                       | 赋值一个用户定义变量                          |
+| -f scripfile or --file scriptfile                       | 从脚本文件中读取awk命令                       |
+| -mf nnn and -mr nnn                                     | 对nnn值设置内在限制                           |
+| -W compact or --compat, -W traditional or --traditional | 在兼容模式下运行awk                           |
+| -W copyleft or --copyleft, -W copyright or --copyright  | 打印简短的版权信息                            |
+| -W help or --help, -W usage or --usage                  | 打印全部awk选项和每个选项的简短说明           |
+| -W lint or --lint                                       | 打印不能向传统unix平台移植的结构的警告        |
+| -W lint-old or --lint-old                               | 打印关于不能向传统unix平台移植的结构的警告    |
+| -W posix                                                | 打开兼容模式。                                |
+| -W re-interval or --re-inerval                          | 允许间隔正则表达式的使用，如括号表达式[[:alpha:]] |
+| -W source program-text or --source program-text         | 使用program-text作为源代码，可与-f命令混用    |
+| -W version or --version                                 | 打印bug报告信息的版本                         |
+
+* sed
+** Syntax
+
+sed [-hnV][-e<script>][-f<script文件>][文本文件]
+
+** Option
+| -e<script>或--expression=<script>   | 以选项中指定的script来处理输入的文本文件     |
+| -f<script文件>或--file=<script文件> | 以选项中指定的script文件来处理输入的文本文件 |
+| -h或--help                          | 显示帮助                                     |
+| -n或--quiet或--silent               | 仅显示script处理后的结果                     |
+| -V或--version                       | 显示版本信息                                 |
+** Action
+| options | action                                                                                           |
+|---------+--------------------------------------------------------------------------------------------------|
+| a       | 新增， a 的后面可以接字串，而这些字串会在新的一行出现(目前的下一行)                              |
+| c       | 取代， c 的后面可以接字串，这些字串可以取代 n1,n2 之间的行                                       |
+| d       | 删除，因为是删除啊，所以 d 后面通常不接任何咚咚                                                  |
+| i       | 插入， i 的后面可以接字串，而这些字串会在新的一行出现(目前的上一行)                              |
+| p       | 打印，亦即将某个选择的数据印出。通常 p 会与参数 sed -n 一起运行                                  |
+| s       | 取代，可以直接进行取代的工作哩！通常这个 s 的动作可以搭配正规表示法！例如 1,20s/old/new/g 就是啦 |
+
+* xargs
+xargs命令的作用，是将标准输入转为命令行参数。
+
+#+begin_src shell
+echo "Without xargs" | echo
+echo "With xargs" | xargs echo
+#+end_src
+
+#+RESULTS:
+|            |
+| With xargs |
+
+#+begin_src shell
+echo -e "a\tb\tc" | xargs -d "\t" echo
+#+end_src
+
+#+RESULTS:
+: a b c
