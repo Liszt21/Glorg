@@ -1,0 +1,5 @@
+#+TITLE: Linux指南
+#+ORGA_PUBLISH_KEYWORD: DONE
+
+* DONE Gatsby :Gatsby:Guide: 
+[[file:../images/gatsby.png][logo]]
