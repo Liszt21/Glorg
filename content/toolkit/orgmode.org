@@ -2,7 +2,7 @@
 #+ORGA_PUBLISH_KEYWORD: DONE
 
 * DONE Org Mode 语法 :Tutorial:
-CLOSED: [2021-09-30 Thu 21:15]
+CLOSED: [2020-09-30 Thu 21:15]
 :PROPERTIES:
 :SUMMARY: org-mode 基础语法
 :END:
@@ -12,7 +12,7 @@ CLOSED: [2021-09-30 Thu 21:15]
 ** 表格
 
 * DONE Org Mode 工具 :Introduction:Toolkit:
-CLOSED: [2021-09-30 Thu 21:08]
+CLOSED: [2020-09-30 Thu 21:08]
 :PROPERTIES:
 :SUMMARY: org-mode 工具介绍
 :END:

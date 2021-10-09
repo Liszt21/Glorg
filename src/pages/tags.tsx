@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { Tooltip, Collapse, Space, Badge } from "antd";
 import Layout from "../layouts";
-import * as React from "react";
+import { PanelHeader, PanelContent } from "../components/panel";
 
 const { Panel } = Collapse;
 
@@ -53,30 +53,10 @@ const TagsPage = () => {
           const posts = tags[key];
           return (
             <Panel
-              header={
-                <Space>
-                  <span>{key}</span>{" "}
-                  <Badge
-                    count={posts.length}
-                    style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
-                  />
-                </Space>
-              }
+              header={<PanelHeader title={key} count={posts.length} />}
               key={key}
             >
-              <Space direction="vertical">
-                {posts.map((post) => {
-                  return (
-                    <Tooltip
-                      placement="right"
-                      title={post.summary}
-                      key={post.title}
-                    >
-                      <Link to={post.path}>{post.title}</Link>
-                    </Tooltip>
-                  );
-                })}
-              </Space>
+              <PanelContent posts={posts} />
             </Panel>
           );
         })}
