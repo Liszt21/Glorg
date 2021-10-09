@@ -1,7 +1,7 @@
 #+TITLE: Linux指南
 #+ORGA_PUBLISH_KEYWORD: DONE
 
-* grep
+* grep :Linux:Command:Guide:
 grep [-abcEFGhHilLnqrsvVwxy] [-A<显示行数>] [-B<显示列数>] [-C<显示列数>] [-d<进行动作>] [-e<范本样式>] [-f<范本文件>] [--help] [范本样式] [文件或目录...]
 ** Options
 | options                                           | action                                                   |
@@ -34,7 +34,7 @@ grep [-abcEFGhHilLnqrsvVwxy] [-A<显示行数>] [-B<显示列数>] [-C<显示列
 | -x --line-regexp                                  | 只显示全列符合的列。                                     |
 | -y                                                | 此参数的效果和指定"-i"参数相同。                         |
 
-* awk
+* awk :Linux:Command:Guide:
 AWK 是一种处理文本文件的语言，是一个强大的文本分析工具。
 awk [选项参数] 'script' var=value file(s)
 awk [选项参数] -f scriptfile var=value file(s)
@@ -55,7 +55,7 @@ awk [选项参数] -f scriptfile var=value file(s)
 | -W source program-text or --source program-text         | 使用program-text作为源代码，可与-f命令混用    |
 | -W version or --version                                 | 打印bug报告信息的版本                         |
 
-* sed
+* sed :Linux:Command:Guide:
 ** Syntax
 
 sed [-hnV][-e<script>][-f<script文件>][文本文件]
@@ -76,7 +76,7 @@ sed [-hnV][-e<script>][-f<script文件>][文本文件]
 | p       | 打印，亦即将某个选择的数据印出。通常 p 会与参数 sed -n 一起运行                                  |
 | s       | 取代，可以直接进行取代的工作哩！通常这个 s 的动作可以搭配正规表示法！例如 1,20s/old/new/g 就是啦 |
 
-* xargs
+* xargs :Linux:Command:Guide:
 xargs命令的作用，是将标准输入转为命令行参数。
 
 #+begin_src shell

@@ -1,5 +1,9 @@
 #+TITLE: Linux指南
 #+ORGA_PUBLISH_KEYWORD: DONE
 
-* DONE Gatsby :Gatsby:Guide: 
+* DONE Gatsby 介绍 :Gatsby:Guide: 
+CLOSED: [2021-09-30 Thu 21:04]
+:PROPERTIES:
+:SUMMARY: Gatsby gives frontend teams the tools and technology they need to build world-class web experiences. From marketing sites, to eCommerce stores, to documentation. Gatsby can help you build it.
+:END:
 [[file:../assets/gatsby-logo.png][logo]]

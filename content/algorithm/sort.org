@@ -1,7 +1,7 @@
 #+TITLE: Sort
 #+ORGA_PUBLISH_KEYWORD: DONE
 
-* DONE 快速排序 :Algorighm:Sort:
+* DONE 快速排序 :Algorithm:Sort:
 CLOSED: [2021-10-03 Sun 00:28]
 :PROPERTIES:
 :SUMMARY: 快速排序

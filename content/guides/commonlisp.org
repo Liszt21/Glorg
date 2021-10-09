@@ -2,7 +2,7 @@
 #+ORGA_PUBLISH_KEYWORD: DONE
 #+ORGA_PUBLISH_KEYWORD: DONE
 
-* DONE CommonLisp 语法 :Lisp:Syntax:
+* DONE CommonLisp 语法 :Lisp:Syntax:Tutorial:
 CLOSED: [2021-09-30 Thu 21:04]
 :PROPERTIES:
 :SUMMARY: CommonLisp 语法介绍：七大公理，变量，函数，宏
