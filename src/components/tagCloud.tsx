@@ -1,4 +1,3 @@
-import * as React from "react"
 import { List, Tag } from 'antd';
 
 import {Chart, registerShape} from "@antv/g2"

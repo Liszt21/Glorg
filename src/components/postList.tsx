@@ -1,4 +1,3 @@
-import * as React from "react"
 import { List, Tag } from 'antd';
 
 interface PostData {

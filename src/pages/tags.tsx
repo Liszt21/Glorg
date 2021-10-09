@@ -1,7 +1,6 @@
-import * as React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import Layout from "../layouts"
 import { Tag } from 'antd';
+import Layout from "../layouts"
 
 const TagsPage = () => {
   const data = useStaticQuery(graphql`

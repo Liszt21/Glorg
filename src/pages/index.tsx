@@ -1,7 +1,6 @@
-import * as React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import Layout from "../layouts"
 import PostList from "../components/postList"
+import Layout from "../layouts"
 
 export default () => {
   const data = useStaticQuery(graphql`
