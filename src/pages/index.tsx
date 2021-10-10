@@ -1,13 +1,13 @@
-import { graphql, useStaticQuery, Link } from "gatsby"
-import PostList from "../components/postList"
-import Layout from "../layouts"
+import { graphql, useStaticQuery, Link } from "gatsby";
+import PostList from "../components/postList";
+import Layout from "../layouts";
 
 export default () => {
   const data = useStaticQuery(graphql`
     query {
-      allOrgContent(sort: {order: DESC, fields: metadata___date}) {
+      allOrgContent(sort: { order: DESC, fields: metadata___date }) {
         totalCount
-        nodes  {
+        nodes {
           fields {
             slug
             path
@@ -25,23 +25,23 @@ export default () => {
         }
       }
     }
-  `)
+  `);
 
-  const posts = data.allOrgContent.nodes.map((node)=> {
-        return {
-          title: node.metadata.title,
-          content: node.html,
-          date: node.metadata.date,
-          tags: node.metadata.tags,
-          category: node.metadata.category,
-          excerpt: node.excerpt,
-          path: node.fields.path
-        }
-      })
+  const posts = data.allOrgContent.nodes.map((node) => {
+    return {
+      title: node.metadata.title,
+      content: node.html,
+      date: node.metadata.date,
+      tags: node.metadata.tags,
+      category: node.metadata.category,
+      excerpt: node.excerpt,
+      path: node.fields.path
+    };
+  });
 
   return (
     <Layout>
-      <PostList posts={posts}/>
+      <PostList posts={posts} />
     </Layout>
-  )
-}
+  );
+};
