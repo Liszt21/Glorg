@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery, Link } from "gatsby";
-import PostList from "../components/postList";
+import { PostList } from "../components/post";
 import Layout from "../layouts";
 
 export default () => {
@@ -30,18 +30,18 @@ export default () => {
   const posts = data.allOrgContent.nodes.map((node) => {
     return {
       title: node.metadata.title,
-      content: node.html,
+      html: node.html,
       date: node.metadata.date,
       tags: node.metadata.tags,
       category: node.metadata.category,
-      excerpt: node.excerpt,
+      summary: node.excerpt,
       path: node.fields.path
     };
   });
 
   return (
     <Layout>
-      <PostList posts={posts} />
+      <PostList posts={posts} size="large" pagination={{ pageSize: 6 }} />
     </Layout>
   );
 };
