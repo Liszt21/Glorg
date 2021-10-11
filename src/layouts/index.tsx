@@ -1,46 +1,56 @@
-import { Layout, BackTop, Space, Input } from "antd";
-import { GithubOutlined } from "@ant-design/icons";
+import { Affix, BackTop, Space, Input, Row, Col } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 import Menu from "./menu";
 
-const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 
-export default ({ children }) => {
-  const onSearch = () => {};
+const styles = {
+  container: {
+    minHeight: "100vh",
+    width: "100%",
+    backgroundColor: "white"
+  },
+  header: {
+    height: "48px",
+    width: "100%",
+    boxShadow: "0 0 3px #ccc",
+    backgroundColor: "white"
+  },
+  content: {
+    minHeight: "calc(100vh - 144px)",
+    width: "100%"
+  },
+  footer: { minHeight: "96px" }
 
+}
+
+export default ({ children }) => {
+  const onSearch = () => { };
   return (
-    <Layout style={{ minHeight: "100vh", backgroundColor: "#efefef" }}>
-      <Header
-        style={{
-          width: "81vw",
-          margin: "0 auto 10px auto",
-          backgroundColor: "white",
-          flexFlow: "row",
-          display: "flex"
-        }}
-      >
-        <h1>Glorg</h1>
-        <Menu />
-        <div style={{ flexGrow: 1 }}>
-          <Search
-            placeholder="input search text"
-            style={{ width: 200, margin: 16, float: "right" }}
-            onSearch={onSearch}
-          ></Search>
-        </div>
-        <Space>
-          <GithubOutlined />
-        </Space>
-      </Header>
-      <Layout style={{ flexDirection: "row", width: "81vw", margin: "0 auto" }}>
-        <Content style={{ padding: "1vh 1vw", backgroundColor: "white" }}>
-          {children}
-        </Content>
-      </Layout>
-      <Footer style={{ textAlign: "center" }}>
-        All materials &copy; {`${new Date().getFullYear()}`}, Liszt21.
-        <BackTop />
-      </Footer>
-    </Layout>
+    <div style={styles.container}>
+      <Affix>
+        <Row style={styles.header} justify="space-between" align='middle'>
+          <Col xs={0} sm={2} md={2} lg={4} style={{ textAlign: 'center' }}>GLORG</Col>
+          <Col xs={11} sm={6} md={8} lg={10}><Menu /></Col>
+          <Col xs={12} sm={14} md={8} lg={6}>
+            <Search
+              placeholder="input search text"
+              style={{ maxWidth: 200 }}
+              onSearch={onSearch}
+            />
+          </Col>
+          <Col xs={1} sm={2} md={4} lg={2}>
+            <UserOutlined />
+          </Col>
+        </Row>
+      </Affix>
+      <div style={styles.content}>{children}</div>
+      <Row style={styles.footer}>
+        <Col span={24} style={{ margin: "auto", textAlign: "center" }}>
+          All materials &copy; {`${new Date().getFullYear()}`}, Liszt21.
+        </Col>
+      </Row>
+      <BackTop />
+    </div>
   );
 };
