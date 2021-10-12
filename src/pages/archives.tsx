@@ -1,36 +1,12 @@
-import { graphql, useStaticQuery } from "gatsby";
 import { Collapse } from "antd";
 import Layout from "../layouts";
+import { fetchPosts } from "../data";
 import { PanelHeader, PanelContent } from "../components/panel";
 
 const { Panel } = Collapse;
 
 const ArchivesPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allOrgContent(sort: { order: DESC, fields: metadata___date }) {
-        totalCount
-        nodes {
-          fields {
-            slug
-            path
-          }
-          metadata {
-            summary
-            category
-            title
-            date(formatString: "YYYY-MM-DD")
-            export_file_name
-            keyword
-            tags
-          }
-          excerpt
-          html
-        }
-      }
-    }
-  `);
-
+  const posts = fetchPosts();
   const now = new Date();
   const currentYear = now.getFullYear();
   const currentMonth = now.getMonth() + 1;
@@ -38,8 +14,8 @@ const ArchivesPage = () => {
   const months = {};
   const years = {};
 
-  data.allOrgContent.nodes.map((node) => {
-    const date = new Date(node.metadata.date);
+  posts.map((post) => {
+    const date = new Date(post.date);
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
 
@@ -51,18 +27,18 @@ const ArchivesPage = () => {
     if (year === currentYear) {
       if (month <= currentMonth) {
         if (months[month]) {
-          months[month].push(node);
+          months[month].push(post);
         } else {
-          months[month] = [node];
+          months[month] = [post];
         }
       } else {
         console.log("Invalid month");
       }
     } else {
       if (years[year]) {
-        years[year].push(node);
+        years[year].push(post);
       } else {
-        years[year] = [node];
+        years[year] = [post];
       }
     }
   });
@@ -84,15 +60,7 @@ const ArchivesPage = () => {
                 }
                 key={month}
               >
-                <PanelContent
-                  posts={posts.map((post) => {
-                    return {
-                      title: post.metadata.title,
-                      summary: post.metadata.summary,
-                      path: post.fields.path
-                    };
-                  })}
-                />
+                <PanelContent posts={posts} />
               </Panel>
             );
           })}
@@ -107,15 +75,7 @@ const ArchivesPage = () => {
                 }
                 key={year}
               >
-                <PanelContent
-                  posts={posts.map((post) => {
-                    return {
-                      title: post.metadata.title,
-                      summary: post.metadata.summary,
-                      path: post.fields.path
-                    };
-                  })}
-                />
+                <PanelContent posts={posts} />
               </Panel>
             );
           })}

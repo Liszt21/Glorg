@@ -1,47 +1,20 @@
-import { graphql, useStaticQuery, Link } from "gatsby";
-import { Tooltip, Collapse, Space, Badge } from "antd";
+import { Collapse } from "antd";
 import Layout from "../layouts";
+import { fetchPosts } from "../data";
 import { PanelHeader, PanelContent } from "../components/panel";
 
 const { Panel } = Collapse;
 
 const TagsPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allOrgContent(sort: { order: DESC, fields: metadata___date }) {
-        totalCount
-        nodes {
-          fields {
-            path
-          }
-          metadata {
-            title
-            tags
-            summary
-          }
-        }
-      }
-    }
-  `);
-
   const tags = {};
+  const posts = fetchPosts();
 
-  data.allOrgContent.nodes.forEach((node) => {
-    node.metadata.tags.forEach((tag) => {
+  posts.forEach((post) => {
+    post.tags.forEach((tag) => {
       if (tags[tag]) {
-        tags[tag].push({
-          title: node.metadata.title,
-          path: node.fields.path,
-          summary: node.metadata.summary
-        });
+        tags[tag].push(post);
       } else {
-        tags[tag] = [
-          {
-            title: node.metadata.title,
-            path: node.fields.path,
-            summary: node.metadata.summary
-          }
-        ];
+        tags[tag] = [post];
       }
     });
   });

@@ -1,52 +1,14 @@
-import { graphql, useStaticQuery, Link } from "gatsby";
 import { Tree, Space } from "antd";
-import Layout from "../layouts";
-import { PanelContent } from "../components/panel";
 import { useState } from "react";
+import Layout from "../layouts";
+import { fetchPosts } from "../data";
+import { PanelContent } from "../components/panel";
 
 const { DirectoryTree } = Tree;
 
 const CategoriesPage = () => {
-  const [html, setHtml] = useState("<h1>HTML</h1>");
-  const [isLeaf, setIsLeaf] = useState(false);
-  const [current, setCurrent] = useState([]);
-  const data = useStaticQuery(graphql`
-    query {
-      allOrgContent(sort: { order: DESC, fields: metadata___date }) {
-        totalCount
-        nodes {
-          fields {
-            slug
-            path
-          }
-          metadata {
-            category
-            title
-            date(formatString: "lll", locale: "zh-cn")
-            export_file_name
-            keyword
-            tags
-          }
-          excerpt
-          html
-        }
-      }
-    }
-  `);
-
-  const posts = data.allOrgContent.nodes.map((node) => {
-    return {
-      title: node.metadata.title,
-      html: node.html,
-      date: node.metadata.date,
-      tags: node.metadata.tags,
-      category: node.metadata.category,
-      excerpt: node.excerpt,
-      path: node.fields.path,
-      slug: node.fields.slug
-    };
-  });
-
+  const [current, setCurrent] = useState({ children: [] } as any);
+  const posts = fetchPosts();
   const tree = { children: [] };
 
   posts.forEach((post) => {
@@ -64,24 +26,16 @@ const CategoriesPage = () => {
       }
     });
     current.children.push({
-      title: post.title,
       key: key + ":" + post.title,
       isLeaf: true,
-      html: post.html,
-      path: post.path,
-      summary: post.excerpt
+      ...post
     });
   });
 
   const onSelect = (keys, info) => {
-    if (info.node.isLeaf) {
-      setHtml(info.node.html);
-    } else {
-      setCurrent(info.node.children);
-    }
-    setIsLeaf(info.node.isLeaf);
+    setCurrent(info.node)
   };
-  const onExpand = () => {};
+  const onExpand = () => { };
 
   return (
     <Layout>
@@ -93,13 +47,13 @@ const CategoriesPage = () => {
           onExpand={onExpand}
           style={{ background: "rgba(0,0,0,0.05", height: "100%" }}
         />
-        {isLeaf ? (
+        {current.isLeaf ? (
           <div
             className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
+            dangerouslySetInnerHTML={{ __html: current.html }}
           ></div>
         ) : (
-          <PanelContent posts={current} />
+          <PanelContent posts={current.children} />
         )}
       </Space>
     </Layout>
