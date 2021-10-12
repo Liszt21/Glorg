@@ -11,7 +11,6 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-react-helmet",
-    // "gatsby-plugin-antd",
     { resolve: "gatsby-plugin-antd", options: { style: true } },
     {
       resolve: "gatsby-plugin-typescript",

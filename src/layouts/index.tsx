@@ -1,4 +1,4 @@
-import { Affix, BackTop, Space, Input, Row, Col } from "antd";
+import { Affix, BackTop, Input, Row, Col } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import Menu from "./menu";
 
@@ -21,10 +21,9 @@ const styles = {
     width: "100%"
   },
   footer: { minHeight: "96px" }
-
 }
 
-export default ({ children }) => {
+const Layout = ({ children }) => {
   const onSearch = () => { };
   return (
     <div style={styles.container}>
@@ -54,3 +53,5 @@ export default ({ children }) => {
     </div>
   );
 };
+
+export default Layout;
