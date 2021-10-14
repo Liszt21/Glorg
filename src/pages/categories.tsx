@@ -1,8 +1,8 @@
-import { Tree, Space } from "antd";
 import { useState } from "react";
 import Layout from "../layouts";
 import { fetchPosts } from "../data";
 import { PanelContent } from "../components/panel";
+import { Tree, Space } from "antd";
 
 const { DirectoryTree } = Tree;
 
@@ -28,14 +28,14 @@ const CategoriesPage = () => {
     current.children.push({
       key: key + ":" + post.title,
       isLeaf: true,
-      ...post
+      ...post,
     });
   });
 
   const onSelect = (keys, info) => {
-    setCurrent(info.node)
+    setCurrent(info.node);
   };
-  const onExpand = () => { };
+  const onExpand = () => {};
 
   return (
     <Layout>

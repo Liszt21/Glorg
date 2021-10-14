@@ -1,7 +1,7 @@
-import { Collapse } from "antd";
 import Layout from "../layouts";
-import { fetchPosts } from "../data";
+import { fetchPosts, parseArchives } from "../data";
 import { PanelHeader, PanelContent } from "../components/panel";
+import { Collapse } from "antd";
 
 const { Panel } = Collapse;
 
@@ -10,38 +10,7 @@ const ArchivesPage = () => {
   const now = new Date();
   const currentYear = now.getFullYear();
   const currentMonth = now.getMonth() + 1;
-
-  const months = {};
-  const years = {};
-
-  posts.map((post) => {
-    const date = new Date(post.date);
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-
-    if (year > currentYear && month > currentMonth) {
-      console.log("Invalid date");
-      return;
-    }
-
-    if (year === currentYear) {
-      if (month <= currentMonth) {
-        if (months[month]) {
-          months[month].push(post);
-        } else {
-          months[month] = [post];
-        }
-      } else {
-        console.log("Invalid month");
-      }
-    } else {
-      if (years[year]) {
-        years[year].push(post);
-      } else {
-        years[year] = [post];
-      }
-    }
-  });
+  const { months, years } = parseArchives(posts);
 
   return (
     <Layout>

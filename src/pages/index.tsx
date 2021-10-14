@@ -1,10 +1,10 @@
-import { Row, Col, Space, Affix, Divider, Tag, Statistic } from "antd";
-import { TagsOutlined } from "@ant-design/icons";
-import { PostList } from "../components/post";
-import Layout from "../layouts";
-import { fetchPosts, parseTags, parseTree } from "../data";
 import { useState } from "react";
 import { css } from "@emotion/react";
+import Layout from "../layouts";
+import { fetchPosts, parseTags, parseTree } from "../data";
+import { PostList } from "../components/post";
+import { TagsOutlined } from "@ant-design/icons";
+import { Row, Col, Space, Affix, Divider, Tag, Statistic } from "antd";
 
 const { Countdown } = Statistic;
 
@@ -47,6 +47,7 @@ export default () => {
                       direction="vertical"
                       style={{ textAlign: "center" }}
                       size="small"
+                      key={item.title}
                     >
                       <span>{item.value}</span>
                       <span>{item.title}</span>

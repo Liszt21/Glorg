@@ -1,5 +1,5 @@
-import { Descriptions } from "antd";
 import Layout from "../layouts";
+import { Descriptions } from "antd";
 
 const AboutPage = () => {
   return (
