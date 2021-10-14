@@ -23,7 +23,7 @@ const styles = {
   footer: { minHeight: "96px" }
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, left = null, right = null }) => {
   const onSearch = () => { };
   return (
     <div style={styles.container}>
@@ -43,7 +43,9 @@ const Layout = ({ children }) => {
           </Col>
         </Row>
       </Affix>
-      <div style={styles.content}>{children}</div>
+      <Row style={styles.content} justify="space-around">
+        <Col sm={24} md={18}>{children}</Col>
+      </Row>
       <Row style={styles.footer}>
         <Col span={24} style={{ margin: "auto", textAlign: "center" }}>
           All materials &copy; {`${new Date().getFullYear()}`}, Liszt21.
