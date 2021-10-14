@@ -8,12 +8,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: slug
+      value: slug,
     });
     createNodeField({
       node,
       name: `path`,
-      value: `/atrical${slug}${node.metadata.title}`
+      value: `/atrical${slug}${node.metadata.title}`,
     });
   }
 };
@@ -32,6 +32,7 @@ exports.createPages = async function ({ actions, graphql }) {
             slug
             path
           }
+          excerpt
         }
       }
     }
@@ -40,7 +41,13 @@ exports.createPages = async function ({ actions, graphql }) {
     actions.createPage({
       path: `${node.fields.path}`,
       component: require.resolve(`./src/templates/post.tsx`),
-      context: node
+      context: {
+        html: node.html,
+        title: node.metadata.title,
+        summary: node.excerpt,
+        slug: node.fields.slug,
+        path: node.fields.path,
+      },
     });
   });
 };
