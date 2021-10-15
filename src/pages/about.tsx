@@ -1,9 +1,11 @@
 import Layout from "../layouts";
+import SEO from "../components/seo";
 import { Descriptions } from "antd";
 
 const AboutPage = () => {
   return (
     <Layout>
+      <SEO title="GLorg : About" />
       <Descriptions title="About me" bordered column={1}>
         <Descriptions.Item label="Name">Liszt21</Descriptions.Item>
         <Descriptions.Item label="Major">Computer Science</Descriptions.Item>

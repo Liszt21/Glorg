@@ -23,7 +23,7 @@ export default (props) => {
   const post = props.pageContext.post;
   return (
     <Layout>
-      <SEO title={post.title} description={post.summary} />
+      <SEO title={post.title} description={post.summary} keywords={post.tags} />
       <Header>
         <h1 style={{ textAlign: "center" }}>{post.title}</h1>
         <p>{post.summary}</p>

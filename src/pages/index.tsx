@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import Layout from "../layouts";
 import { fetchPosts, parseTags, parseTree } from "../data";
 import { PostList } from "../components/post";
+import SEO from "../components/seo";
 import { TagsOutlined } from "@ant-design/icons";
 import { Row, Col, Space, Affix, Divider, Tag, Statistic } from "antd";
 
@@ -27,6 +28,11 @@ export default () => {
 
   return (
     <Layout>
+      <SEO
+        title="Glorg"
+        description="Liszt's Blog!"
+        keywords={["Gatsby", "Blog", "React", "Org-Mode"]}
+      />
       <Row justify="space-around">
         <Col xs={24} sm={24} md={18}>
           <PostList

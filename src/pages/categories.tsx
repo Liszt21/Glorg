@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Layout from "../layouts";
-import { fetchPosts } from "../data";
+import { fetchPosts, parseTree } from "../data";
 import { PanelContent } from "../components/panel";
+import SEO from "../components/seo";
 import { Tree, Space } from "antd";
 
 const { DirectoryTree } = Tree;
@@ -9,28 +10,7 @@ const { DirectoryTree } = Tree;
 const CategoriesPage = () => {
   const [current, setCurrent] = useState({ children: [] } as any);
   const posts = fetchPosts();
-  const tree = { children: [] };
-
-  posts.forEach((post) => {
-    let current = tree;
-    let key = "";
-    const paths = post.slug.split("/");
-    paths.forEach((path) => {
-      if (path !== "") {
-        let index = current.children.findIndex((item) => item.title === path);
-        key += "/" + path;
-        if (index === -1) {
-          index = current.children.push({ title: path, key, children: [] }) - 1;
-        }
-        current = current.children[index];
-      }
-    });
-    current.children.push({
-      key: key + ":" + post.title,
-      isLeaf: true,
-      ...post,
-    });
-  });
+  const tree = parseTree(posts);
 
   const onSelect = (keys, info) => {
     setCurrent(info.node);
@@ -39,10 +19,11 @@ const CategoriesPage = () => {
 
   return (
     <Layout>
+      <SEO title="Glorg : Catgories" />
       <Space style={{ height: "100%" }} align="start">
         <DirectoryTree
           multiple
-          treeData={tree.children}
+          treeData={tree}
           onSelect={onSelect}
           onExpand={onExpand}
           style={{ background: "rgba(0,0,0,0.05", height: "100%" }}

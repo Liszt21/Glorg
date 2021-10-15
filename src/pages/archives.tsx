@@ -1,6 +1,7 @@
 import Layout from "../layouts";
 import { fetchPosts, parseArchives } from "../data";
 import { PanelHeader, PanelContent } from "../components/panel";
+import SEO from "../components/seo";
 import { Collapse } from "antd";
 
 const { Panel } = Collapse;
@@ -14,6 +15,7 @@ const ArchivesPage = () => {
 
   return (
     <Layout>
+      <SEO title="Glorg : Atchives" />
       <Collapse defaultActiveKey={[currentMonth]}>
         {Object.keys(months)
           .sort((a, b) => (a < b ? -1 : 1))
