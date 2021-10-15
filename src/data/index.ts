@@ -13,7 +13,7 @@ const fetchPosts = () => {
           metadata {
             category
             title
-            date(formatString: "YYYY-MM-DD hh:mm", locale: "zh-cn")
+            date(formatString: "YYYY-MM-DD HH:mm", locale: "zh-cn")
             export_file_name
             keyword
             tags
