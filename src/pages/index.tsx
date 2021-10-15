@@ -17,7 +17,7 @@ export default () => {
   const count = [
     { title: "文章", value: posts.length },
     { title: "分类", value: tree.length },
-    { title: "标签", value: Object.keys(tags).length }
+    { title: "标签", value: Object.keys(tags).length },
   ];
 
   const onClickTag = (event) => {
@@ -29,7 +29,13 @@ export default () => {
     <Layout>
       <Row justify="space-around">
         <Col xs={24} sm={24} md={18}>
-          <PostList posts={posts} size="large" pagination={{ pageSize: 6 }} />
+          <PostList
+            posts={posts.filter(
+              (post) => selected === "" || post.tags.indexOf(selected) !== -1
+            )}
+            size="large"
+            pagination={{ pageSize: 6 }}
+          />
         </Col>
         <Col xs={0} sm={0} md={6} style={{ maxWidth: "270px" }}>
           <Affix offsetTop={96}>
@@ -71,7 +77,11 @@ export default () => {
                         &:hover {
                           color: #1890ff;
                         }
+                        &[status="selected"] {
+                          color: #1890ff;
+                        }
                       `}
+                      status={selected === tag ? "selected" : null}
                     >
                       {tag}
                     </Tag>
