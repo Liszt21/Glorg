@@ -17,7 +17,7 @@ export default () => {
   const count = [
     { title: "文章", value: posts.length },
     { title: "分类", value: tree.length },
-    { title: "标签", value: Object.keys(tags).length },
+    { title: "标签", value: Object.keys(tags).length }
   ];
 
   const onClickTag = (event) => {
