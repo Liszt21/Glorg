@@ -1,9 +1,16 @@
 #+TITLE: Linux指南
 #+ORGA_PUBLISH_KEYWORD: DONE
 
-* grep :Linux:Command:Guide:
+* DONE Linux命令行三剑客——grep :Linux:Command:Guide:
+CLOSED: [2021-10-14 Thu 13:58]
+:PROPERTIES:
+:SUMMARY: grep （缩写来自Globally search a Regular Expression and Print）是一种强大的文本搜索工具，它能使用特定模式匹配（包括正则表达式）搜索文本，并默认输出匹配行。Unix的grep家族包括grep、egrep和fgrep。Windows系统下类似命令findstr
+:END:
+
+#+begin_src shell
 grep [-abcEFGhHilLnqrsvVwxy] [-A<显示行数>] [-B<显示列数>] [-C<显示列数>] [-d<进行动作>] [-e<范本样式>] [-f<范本文件>] [--help] [范本样式] [文件或目录...]
-** Options
+#+end_src
+** 用法
 | options                                           | action                                                   |
 |---------------------------------------------------+----------------------------------------------------------|
 | -a或 --text                                       | 不要忽略二进制的数据。                                   |
@@ -34,10 +41,15 @@ grep [-abcEFGhHilLnqrsvVwxy] [-A<显示行数>] [-B<显示列数>] [-C<显示列
 | -x --line-regexp                                  | 只显示全列符合的列。                                     |
 | -y                                                | 此参数的效果和指定"-i"参数相同。                         |
 
-* awk :Linux:Command:Guide:
-AWK 是一种处理文本文件的语言，是一个强大的文本分析工具。
+* DONE Linux命令行三剑客——awk :Linux:Command:Guide:
+CLOSED: [2021-10-03 Sun 00:28]
+:PROPERTIES:
+:SUMMARY: AWK 是一种处理文本文件的语言，是一个强大的文本分析工具。 之所以叫 AWK 是因为其取了三位创始人 Alfred Aho，Peter Weinberger, 和 Brian Kernighan 的 Family Name 的首字符。
+:END:
+#+begin_src shell
 awk [选项参数] 'script' var=value file(s)
 awk [选项参数] -f scriptfile var=value file(s)
+#+end_src
 ** Options
 | options                                                 | action                                        |
 |---------------------------------------------------------+-----------------------------------------------|
@@ -55,10 +67,16 @@ awk [选项参数] -f scriptfile var=value file(s)
 | -W source program-text or --source program-text         | 使用program-text作为源代码，可与-f命令混用    |
 | -W version or --version                                 | 打印bug报告信息的版本                         |
 
-* sed :Linux:Command:Guide:
-** Syntax
+* DONE Linux命令行三剑客——sed :Linux:Command:Guide:
+CLOSED: [2021-10-03 Sun 00:28]
+:PROPERTIES:
+:SUMMARY: sed 命令是利用脚本来处理文本文件，可依照脚本的指令来处理、编辑文本文件 ,主要用来自动编辑一个或多个文件、简化对文件的反复操作、编写转换程序等。
+:END:
 
+** Syntax
+#+begin_src shell
 sed [-hnV][-e<script>][-f<script文件>][文本文件]
+#+end_src
 
 ** Option
 | -e<script>或--expression=<script>   | 以选项中指定的script来处理输入的文本文件     |
@@ -76,8 +94,11 @@ sed [-hnV][-e<script>][-f<script文件>][文本文件]
 | p       | 打印，亦即将某个选择的数据印出。通常 p 会与参数 sed -n 一起运行                                  |
 | s       | 取代，可以直接进行取代的工作哩！通常这个 s 的动作可以搭配正规表示法！例如 1,20s/old/new/g 就是啦 |
 
-* xargs :Linux:Command:Guide:
-xargs命令的作用，是将标准输入转为命令行参数。
+* DONE Linux命令——xargs :Linux:Command:Guide:
+CLOSED: [2021-10-03 Sun 00:28]
+:PROPERTIES:
+:SUMMARY: xargs（英文全拼： eXtended ARGuments）是给命令传递参数的一个过滤器，也是组合多个命令的一个工具 ,可以将管道或标准输入（stdin）数据转换成命令行参数，也能够从文件的输出中读取数据。
+:END:
 
 #+begin_src shell
 echo "Without xargs" | echo
@@ -94,3 +115,20 @@ echo -e "a\tb\tc" | xargs -d "\t" echo
 
 #+RESULTS:
 : a b c
+
+
+#+begin_src shell
+echo "a b c\ne f g\nd"
+echo "a b c\ne f g\nd" | xargs
+echo "a b c\ne f g\nd" | xargs -n2
+#+end_src
+
+#+RESULTS:
+| a | b | c |   |   |   |   |
+| e | f | g |   |   |   |   |
+| d |   |   |   |   |   |   |
+| a | b | c | e | f | g | d |
+| a | b |   |   |   |   |   |
+| c | e |   |   |   |   |   |
+| f | g |   |   |   |   |   |
+| d |   |   |   |   |   |   |

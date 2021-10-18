@@ -1,13 +1,11 @@
 #+TITLE: ArchLinux
 #+ORGA_PUBLISH_KEYWORD: DONE
 
-* DONE 安装ArchLinux :Tutorial:Linux:Guide:
+* DONE ArchLinux安装指南 :Tutorial:Linux:Guide:
 CLOSED: [2021-09-30 Thu 21:10]
 :PROPERTIES:
-:SUMMARY: Arch Linux 系统安装指南（启动盘，分区，配置，引导，源，常用设置）
+:SUMMARY: Arch Linux（或Arch /ˈɑːrtʃ/)）是一款基于x86-64架构的Linux发行版。系统主要由自由和开源软件组成，支持社区参与。系统设计以KISS原则（保持简单和愚蠢）为总体指导原则，注重代码正确、优雅和极简主义，期待用户能够愿意去理解系统的操作。Arch Linux系统安装、删除和更新软件的软件包管理器叫做pacman
 :END:
-
-- State "DONE"       from "TODO"       [2021-09-30 Thu 21:10]
 ** 启动盘
 *** Ventoy
 新一代多系统启动U盘解决方案
