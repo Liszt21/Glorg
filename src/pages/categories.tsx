@@ -18,7 +18,7 @@ const ChildrenList = ({ node }) => {
             {n.title}
           </Link>
         ) : (
-          <p key={n.title}>{n.title}</p>
+          <span key={n.title}>{n.title}</span>
         );
       })}
     </Space>
@@ -50,7 +50,7 @@ const Summary = ({ nodes }) => {
 const CategoriesPage = () => {
   const posts = fetchPosts();
   const tree = parseTree(posts);
-  const [current, setCurrent] = useState({ children: [] } as any);
+  const [current, setCurrent] = useState(tree as any);
 
   const onSelect = (keys, info) => {
     setCurrent(info.node);
