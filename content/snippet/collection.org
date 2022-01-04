@@ -1,0 +1,21 @@
+#+TITLE: Collection
+
+* DONE 我的工具库                                           :Library:Liszt21:
+CLOSED: [2022-01-04 Tue 14:04]
+:PROPERTIES:
+:SUMMARY: 我的工具库链接
+:END:
+** CommonLisp 库
+- [[https://github.com/Liszt21/Likit][Likit]] :: 个人函数集
+- [[https://github.com/Liszt21/Clish][Clish]] :: 命令行工具
+- [[https://github.com/Liszt21/Emacy][Emacy]] :: emacs 配置切换工具
+- [[https://github.com/Liszt21/Ust][Ust]] :: 脚本管理工具
+
+** Python 库
+- [[https://github.com/Liszt21/Broxy][Broxy]] :: 代理爬虫
+
+** 个人配置
+- [[https://github.com/Liszt21/Dotfiles][Dotfiles]] :: 系统配置
+- [[https://github.com/Liszt21/.spacemacs.d][.spacemacs.d]] :: Spacemacs 配置
+- [[https://github.com/Liszt21/.doom.d][.doom.d]] :: DoomEmacs 配置
+  

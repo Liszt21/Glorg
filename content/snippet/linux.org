@@ -1,10 +1,10 @@
 #+TITLE: Linux指南
 #+ORGA_PUBLISH_KEYWORD: DONE
 
-* DONE Linux命令行三剑客——grep :Linux:Command:Guide:
+* DONE Linux 命令行三剑客——grep                          :Linux:Command:Guide:
 CLOSED: [2021-10-14 Thu 13:58]
 :PROPERTIES:
-:SUMMARY: grep （缩写来自Globally search a Regular Expression and Print）是一种强大的文本搜索工具，它能使用特定模式匹配（包括正则表达式）搜索文本，并默认输出匹配行。Unix的grep家族包括grep、egrep和fgrep。Windows系统下类似命令findstr
+:SUMMARY: grep （缩写来自 Globally search a Regular Expression and Print）是一种强大的文本搜索工具，它能使用特定模式匹配（包括正则表达式）搜索文本，并默认输出匹配行。Unix 的 grep 家族包括 grep、egrep 和 fgrep。Windows 系统下类似命令 findstr
 :END:
 
 #+begin_src shell
@@ -13,7 +13,7 @@ grep [-abcEFGhHilLnqrsvVwxy] [-A<显示行数>] [-B<显示列数>] [-C<显示列
 ** 用法
 | options                                           | action                                                   |
 |---------------------------------------------------+----------------------------------------------------------|
-| -a或 --text                                       | 不要忽略二进制的数据。                                   |
+| -a 或 --text                                       | 不要忽略二进制的数据。                                   |
 | -A<显示行数> 或 --after-context=<显示行数>        | 除了显示符合范本样式的那一列之外，并显示该行之后的内容。 |
 | -b 或 --byte-offset                               | 在显示符合样式的那一行之前，标示出该行第一个字符的编号。 |
 | -B<显示行数> 或 --before-context=<显示行数>       | 除了显示符合样式的那一行之外，并显示该行之前的内容。     |
@@ -31,8 +31,8 @@ grep [-abcEFGhHilLnqrsvVwxy] [-A<显示行数>] [-B<显示列数>] [-C<显示列
 | -l 或 --file-with-matches                         | 列出文件内容符合指定的样式的文件名称。                   |
 | -L 或 --files-without-match                       | 列出文件内容不符合指定的样式的文件名称。                 |
 | -n 或 --line-number                               | 在显示符合样式的那一行之前，标示出该行的列数编号。       |
-| -o 或 --only-matching                             | 只显示匹配PATTERN 部分。                                 |
-| -q 或 --quiet或--silent                           | 不显示任何信息。                                         |
+| -o 或 --only-matching                             | 只显示匹配 PATTERN 部分。                                 |
+| -q 或 --quiet 或--silent                           | 不显示任何信息。                                         |
 | -r 或 --recursive                                 | 此参数的效果和指定"-d recurse"参数相同。                 |
 | -s 或 --no-messages                               | 不显示错误信息。                                         |
 | -v 或 --invert-match                              | 显示不包含匹配文本的所有行。                             |
@@ -41,7 +41,7 @@ grep [-abcEFGhHilLnqrsvVwxy] [-A<显示行数>] [-B<显示列数>] [-C<显示列
 | -x --line-regexp                                  | 只显示全列符合的列。                                     |
 | -y                                                | 此参数的效果和指定"-i"参数相同。                         |
 
-* DONE Linux命令行三剑客——awk :Linux:Command:Guide:
+* DONE Linux 命令行三剑客——awk                           :Linux:Command:Guide:
 CLOSED: [2021-10-03 Sun 00:28]
 :PROPERTIES:
 :SUMMARY: AWK 是一种处理文本文件的语言，是一个强大的文本分析工具。 之所以叫 AWK 是因为其取了三位创始人 Alfred Aho，Peter Weinberger, 和 Brian Kernighan 的 Family Name 的首字符。
@@ -55,19 +55,19 @@ awk [选项参数] -f scriptfile var=value file(s)
 |---------------------------------------------------------+-----------------------------------------------|
 | -F fs or --field-separator fs                           | 指定输入文件折分隔符如-F:                     |
 | -v var=value or --asign var=value                       | 赋值一个用户定义变量                          |
-| -f scripfile or --file scriptfile                       | 从脚本文件中读取awk命令                       |
-| -mf nnn and -mr nnn                                     | 对nnn值设置内在限制                           |
-| -W compact or --compat, -W traditional or --traditional | 在兼容模式下运行awk                           |
+| -f scripfile or --file scriptfile                       | 从脚本文件中读取 awk 命令                       |
+| -mf nnn and -mr nnn                                     | 对 nnn 值设置内在限制                           |
+| -W compact or --compat, -W traditional or --traditional | 在兼容模式下运行 awk                           |
 | -W copyleft or --copyleft, -W copyright or --copyright  | 打印简短的版权信息                            |
-| -W help or --help, -W usage or --usage                  | 打印全部awk选项和每个选项的简短说明           |
-| -W lint or --lint                                       | 打印不能向传统unix平台移植的结构的警告        |
-| -W lint-old or --lint-old                               | 打印关于不能向传统unix平台移植的结构的警告    |
+| -W help or --help, -W usage or --usage                  | 打印全部 awk 选项和每个选项的简短说明           |
+| -W lint or --lint                                       | 打印不能向传统 unix 平台移植的结构的警告        |
+| -W lint-old or --lint-old                               | 打印关于不能向传统 unix 平台移植的结构的警告    |
 | -W posix                                                | 打开兼容模式。                                |
 | -W re-interval or --re-inerval                          | 允许间隔正则表达式的使用，如括号表达式[[:alpha:]] |
-| -W source program-text or --source program-text         | 使用program-text作为源代码，可与-f命令混用    |
-| -W version or --version                                 | 打印bug报告信息的版本                         |
+| -W source program-text or --source program-text         | 使用 program-text 作为源代码，可与-f 命令混用    |
+| -W version or --version                                 | 打印 bug 报告信息的版本                         |
 
-* DONE Linux命令行三剑客——sed :Linux:Command:Guide:
+* DONE Linux 命令行三剑客——sed                           :Linux:Command:Guide:
 CLOSED: [2021-10-03 Sun 00:28]
 :PROPERTIES:
 :SUMMARY: sed 命令是利用脚本来处理文本文件，可依照脚本的指令来处理、编辑文本文件 ,主要用来自动编辑一个或多个文件、简化对文件的反复操作、编写转换程序等。
@@ -79,11 +79,11 @@ sed [-hnV][-e<script>][-f<script文件>][文本文件]
 #+end_src
 
 ** Option
-| -e<script>或--expression=<script>   | 以选项中指定的script来处理输入的文本文件     |
-| -f<script文件>或--file=<script文件> | 以选项中指定的script文件来处理输入的文本文件 |
-| -h或--help                          | 显示帮助                                     |
-| -n或--quiet或--silent               | 仅显示script处理后的结果                     |
-| -V或--version                       | 显示版本信息                                 |
+| -e<script>或--expression=<script>   | 以选项中指定的 script 来处理输入的文本文件     |
+| -f<script 文件>或--file=<script 文件> | 以选项中指定的 script 文件来处理输入的文本文件 |
+| -h 或--help                          | 显示帮助                                     |
+| -n 或--quiet 或--silent               | 仅显示 script 处理后的结果                     |
+| -V 或--version                       | 显示版本信息                                 |
 ** Action
 | options | action                                                                                           |
 |---------+--------------------------------------------------------------------------------------------------|
@@ -94,7 +94,7 @@ sed [-hnV][-e<script>][-f<script文件>][文本文件]
 | p       | 打印，亦即将某个选择的数据印出。通常 p 会与参数 sed -n 一起运行                                  |
 | s       | 取代，可以直接进行取代的工作哩！通常这个 s 的动作可以搭配正规表示法！例如 1,20s/old/new/g 就是啦 |
 
-* DONE Linux命令——xargs :Linux:Command:Guide:
+* DONE Linux 命令——xargs                                 :Linux:Command:Guide:
 CLOSED: [2021-10-03 Sun 00:28]
 :PROPERTIES:
 :SUMMARY: xargs（英文全拼： eXtended ARGuments）是给命令传递参数的一个过滤器，也是组合多个命令的一个工具 ,可以将管道或标准输入（stdin）数据转换成命令行参数，也能够从文件的输出中读取数据。
@@ -132,3 +132,53 @@ echo "a b c\ne f g\nd" | xargs -n2
 | c | e |   |   |   |   |   |
 | f | g |   |   |   |   |   |
 | d |   |   |   |   |   |   |
+
+* DONE Linux 工具 NetworkManager                      :Linux:Network:Toolkit:
+CLOSED: [2022-01-04 Tue 13:47]
+:PROPERTIES:
+:SUMMARY: NetworManager 是检测网络、自动连接网络的程序。无论是无线还是有线连接，它都可以令您轻松管理。对于无线网络,网络管理器优先连接已知的网络并可以自动切换到最可靠的无线网络。利用网络管理器的程序可以自由切换在线和离线模式。网络管理器会相对无线网络优先选择有线网络，支持 VPN。
+:END:
+参考[[https://wiki.archlinux.org/title/NetworkManager][Arch Wiki]]
+
+** 安装
+#+begin_src shell
+  pacman -S networkmanager
+
+  # 额外的用户界面
+  # nm-connection-editor，提供图形界面，
+  # network-manager-applet，提供系统托盘图标(nm-applet)。
+
+  # 移动网络支持
+  # 安装modemmanager、mobile-broadband-provider-info和usb_modeswitch来支持连接移动网络
+#+end_src
+
+** 使用
+*** nmcli
+#+begin_src shell
+  # 显示附近的 wifi:
+  nmcli device wifi list
+
+  # 连接 wifi:
+  nmcli device wifi connect SSID password password
+
+  # 连接到隐藏的 wifi:
+  nmcli device wifi connect SSID password password hidden yes
+
+  # 通过 wlan1 wifi 网卡(interface)连接 wifi:
+  nmcli device wifi connect SSID password password ifname wlan1 profile_name
+
+  # 断开一个网卡(interface)上的连接:
+  nmcli device disconnect ifname eth0
+
+  # 重新连接一个被标记为“已断开”的网卡：
+  nmcli connection up uuid UUID
+
+  # 显示一个所有连接过的网络的UUID的列表:
+  nmcli connection show
+
+  # 查看所有网络设备及其状态:
+  nmcli device
+
+  # 关掉 wifi:
+  nmcli radio wifi off
+#+end_src
