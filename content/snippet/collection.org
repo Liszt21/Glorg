@@ -25,8 +25,8 @@ CLOSED: [2022-01-04 Tue 14:04]
   git clone https://github.com/Liszt21/Dotfiles ~/.dotfiles
 
   # Linux
-  curl -L https://raw.githubusercontent.com/Liszt21/Dotfiles/master/scripts/roswell.sh | bash
+  curl -L https://raw.githubusercontent.com/Liszt21/Dotfiles/master/scripts/system/install.sh | bash
 
   # Windows powershell
-  iwr -useb  https://raw.githubusercontent.com/Liszt21/Dotfiles/master/scripts/scoop.ps1 | iex
+  iwr -useb  https://raw.githubusercontent.com/Liszt21/Dotfiles/master/scripts/system/install.ps1 | iex
 #+end_src
